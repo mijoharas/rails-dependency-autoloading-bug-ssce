@@ -23,13 +23,10 @@ NameError (uninitialized constant TestClass::ChildClass):
   
 app/models/test_d.rb:4:in `foobar'
 app/controllers/test_controller.rb:3:in `test'
-  Rendering .../gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
-  Rendering .../gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered .../gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.3ms)
-  Rendering .../gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered .../gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
-  Rendering .../gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered .../gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
-  Rendered .../gems/ruby-2.4.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.9ms)
 ```
 
+An explanation of what we are doing.
+
+We have a class `TestClass` which includes a module `IncludeModule`. `IncludeModule` itself also includes a module called `ContainerModule` which contains a class `ChildClass`.
+
+We simply want to access `ChildClass` from within `TestClass` to call a method on it. This does not seem to be allowed by rails constant autoloading.
