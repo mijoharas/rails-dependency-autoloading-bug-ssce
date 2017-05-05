@@ -1,5 +1,5 @@
 class TestController < ApplicationController
   def test
-    @test = TestD.foobar
+    @test = TestClass.foobar
   end
 end

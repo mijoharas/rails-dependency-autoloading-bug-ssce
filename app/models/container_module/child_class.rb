@@ -1,5 +1,5 @@
-module TestB
-  class TestC
+module ContainerModule
+  class ChildClass
     def self.foobar
       "Hello! If we work this is being displayed"
     end

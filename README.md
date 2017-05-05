@@ -19,7 +19,7 @@ config.eager_load = false
 Then we will get the following error message:
 
 ```
-NameError (uninitialized constant TestD::TestC):
+NameError (uninitialized constant TestClass::ChildClass):
   
 app/models/test_d.rb:4:in `foobar'
 app/controllers/test_controller.rb:3:in `test'
